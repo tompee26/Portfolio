@@ -35,34 +35,62 @@ function ComputePercentage(percentage) {
     return percentage;
 }
 
-// C/C++
-$("#soft-col-1").append(rowFormat.replace("%skill%", "C/C++").replace("%color%","#FFA500").
-    replace("%colordark%", LightenDarkenColor("#FFA500", -20)).replace("%percentage%", ComputePercentage(100)));
+function generateSkillElement(skill, color, percentage) {
+    return rowFormat.replace("%skill%", skill).replace("%color%", color).
+        replace("%colordark%", LightenDarkenColor(color, -20)).replace("%percentage%", ComputePercentage(percentage));
+}
 
-// Java
-$("#soft-col-1").append(rowFormat.replace("%skill%", "Java").replace("%color%","#48D1CC").
-    replace("%colordark%", LightenDarkenColor("#48D1CC", -20)).replace("%percentage%", ComputePercentage(100)));
+// $("#soft-col-1").append(generateSkillElement("C/C++", "#FFA500", 100));
+// $("#soft-col-1").append(generateSkillElement("Java", "#48D1CC", 100));
+// $("#soft-col-1").append(generateSkillElement("Kotlin", "#DA70D6", 100));
+// $("#soft-col-1").append(generateSkillElement("HTML", "#778899", 100));
 
-// Kotlin
-$("#soft-col-1").append(rowFormat.replace("%skill%", "Kotlin").replace("%color%","#DA70D6").
-    replace("%colordark%", LightenDarkenColor("#DA70D6", -20)).replace("%percentage%", ComputePercentage(100)));
+// $("#soft-col-2").append(generateSkillElement("C#", "#8B4513", 100));
+// $("#soft-col-2").append(generateSkillElement("Assembly", "#2E8B57", 100));
+// $("#soft-col-2").append(generateSkillElement("Python", "#BDB76B", 100));
+// $("#soft-col-2").append(generateSkillElement("Javascript", "#B22222", 100));
 
-// HTML
-$("#soft-col-1").append(rowFormat.replace("%skill%", "HTML").replace("%color%","#778899").
-    replace("%colordark%", LightenDarkenColor("#778899", -20)).replace("%percentage%", ComputePercentage(100)));
+$("#soft-col-1").append(generateSkillElement("C/C++", "#696969", 90));
+$("#soft-col-1").append(generateSkillElement("C#", "#696969", 50));
+$("#soft-col-1").append(generateSkillElement("Kotlin", "#696969", 30));
+$("#soft-col-1").append(generateSkillElement("HTML/CSS", "#696969", 50));
 
-// C#
-$("#soft-col-2").append(rowFormat.replace("%skill%", "C#").replace("%color%","#8B4513").
-    replace("%colordark%", LightenDarkenColor("#8B4513", -20)).replace("%percentage%", ComputePercentage(100)));
+$("#soft-col-2").append(generateSkillElement("Java", "#696969", 90));
+$("#soft-col-2").append(generateSkillElement("Assembly", "#696969", 40));
+$("#soft-col-2").append(generateSkillElement("Python", "#696969", 50));
+$("#soft-col-2").append(generateSkillElement("Javascript", "#696969", 70));
 
-// Assembly
-$("#soft-col-2").append(rowFormat.replace("%skill%", "Assembly").replace("%color%","#2E8B57").
-    replace("%colordark%", LightenDarkenColor("#2E8B57", -20)).replace("%percentage%", ComputePercentage(100)));
+$("#hard-col-1").append(generateSkillElement("Verilog", "#D2B48C", 50));
 
-// Python
-$("#soft-col-2").append(rowFormat.replace("%skill%", "Python").replace("%color%","#BDB76B").
-    replace("%colordark%", LightenDarkenColor("#BDB76B", -20)).replace("%percentage%", ComputePercentage(100)));
+$("#hard-col-2").append(generateSkillElement("VHDL", "#D2B48C", 50));
 
-// Javascript
-$("#soft-col-2").append(rowFormat.replace("%skill%", "Javascript").replace("%color%","#B22222").
-    replace("%colordark%", LightenDarkenColor("#B22222", -20)).replace("%percentage%", ComputePercentage(100)));
+$("#ide-col-1").append(generateSkillElement("Android Studio", "#BDB76B", 90));
+$("#ide-col-1").append(generateSkillElement("Eclipse", "#BDB76B", 60));
+
+$("#ide-col-2").append(generateSkillElement("Visual Studio", "#BDB76B", 70));
+$("#ide-col-2").append(generateSkillElement("Intellij", "#BDB76B", 60));
+
+$("#test-col-1").append(generateSkillElement("Espresso", "#FF6347", 90));
+$("#test-col-1").append(generateSkillElement("JUnit", "#FF6347", 90));
+$("#test-col-1").append(generateSkillElement("Lint", "#FF6347", 80));
+
+$("#test-col-2").append(generateSkillElement("UI Automator", "#FF6347", 80));
+$("#test-col-2").append(generateSkillElement("Sonarqube", "#FF6347", 70));
+$("#test-col-2").append(generateSkillElement("Wireshark", "#FF6347", 70));
+
+$("#os-col-1").append(generateSkillElement("Windows", "#9370DB", 90));
+$("#os-col-1").append(generateSkillElement("Linux", "#9370DB", 80));
+
+$("#os-col-2").append(generateSkillElement("Android", "#9370DB", 90));
+$("#os-col-2").append(generateSkillElement("DryOS", "#9370DB", 70));
+
+$("#db-col-1").append(generateSkillElement("Firebase", "#778899", 80));
+$("#db-col-1").append(generateSkillElement("MySQL", "#778899", 70));
+
+$("#db-col-2").append(generateSkillElement("SQLite", "#778899", 90));
+$("#db-col-2").append(generateSkillElement("PostgreSQL", "#778899", 60));
+
+$("#vcs-col-1").append(generateSkillElement("SVN", "#DEB887", 90));
+$("#vcs-col-1").append(generateSkillElement("Perforce", "#DEB887", 90));
+
+$("#vcs-col-2").append(generateSkillElement("Git", "#DEB887", 90));
