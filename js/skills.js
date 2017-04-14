@@ -28,7 +28,11 @@ function LightenDarkenColor(col, amt) {
 }
 
 // Populate Software Skills
-var rowFormat = "<div class=\"flex-display skill-row\"><p class=\"skill-tag align-middle\" style=\"background-color: %colordark%\">%skill%</p><p class=\"skill-bar\" style=\"background-color: %color%; width:%percentage%\">&nbsp</p></div>"
+var rowFormat = " \
+    <div class=\"flex-display skill-row\"> \
+        <p class=\"skill-tag align-middle\" style=\"background-color: %colordark%\">%skill%</p> \
+        <p class=\"skill-bar\" style=\"background-color: %color%; width:%percentage%\">&nbsp</p> \
+    </div>";
 
 function ComputePercentage(percentage) {
     var percentage = (0.8 * percentage).toString() + "\%";
@@ -40,17 +44,7 @@ function generateSkillElement(skill, color, percentage) {
         replace("%colordark%", LightenDarkenColor(color, -20)).replace("%percentage%", ComputePercentage(percentage));
 }
 
-// $("#soft-col-1").append(generateSkillElement("C/C++", "#FFA500", 100));
-// $("#soft-col-1").append(generateSkillElement("Java", "#48D1CC", 100));
-// $("#soft-col-1").append(generateSkillElement("Kotlin", "#DA70D6", 100));
-// $("#soft-col-1").append(generateSkillElement("HTML", "#778899", 100));
-
-// $("#soft-col-2").append(generateSkillElement("C#", "#8B4513", 100));
-// $("#soft-col-2").append(generateSkillElement("Assembly", "#2E8B57", 100));
-// $("#soft-col-2").append(generateSkillElement("Python", "#BDB76B", 100));
-// $("#soft-col-2").append(generateSkillElement("Javascript", "#B22222", 100));
-
-$("#soft-col-1").append(generateSkillElement("C/C++", "#696969", 90));
+$("#soft-col-1").append(generateSkillElement("C/C++", "#696969", 100));
 $("#soft-col-1").append(generateSkillElement("C#", "#696969", 50));
 $("#soft-col-1").append(generateSkillElement("Kotlin", "#696969", 30));
 $("#soft-col-1").append(generateSkillElement("HTML/CSS", "#696969", 50));

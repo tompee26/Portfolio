@@ -92,8 +92,9 @@
 }
 
 .skill-row {
-    border-radius: 20px;
+    border-radius: 5px;
     margin: 5px;
+    background-color: gainsboro;
 }
 
 .skill-tag {
@@ -103,10 +104,12 @@
     padding: 10px;
     color: white;
     font-weight: bold;
+    border-radius: 5px 0px 0px 5px;
 }
 
 .skill-bar {
     height: 100%;
     margin: 0px;
     padding: 10px;
+    border-radius: 0px 5px 5px 0px;
 }
