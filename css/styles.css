@@ -90,3 +90,23 @@
     text-decoration: none;
     color: black;
 }
+
+.skill-row {
+    border-radius: 2px;
+    margin: 5px;
+}
+
+.skill-tag {
+    width: 20%;
+    height: 100%;
+    margin: 0px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.skill-bar {
+    height: 100%;
+    margin: 0px;
+    padding: 10px;
+}
