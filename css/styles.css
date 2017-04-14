@@ -2,6 +2,17 @@
     font-family: 'Delius', cursive;
 }
 
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/** {
+    border: 1px solid red !important;
+}*/
+
 .flex-display {
     display: flex;
 }
@@ -16,6 +27,12 @@
     padding-right:0px;
 }
 
+.portrait {
+    border-radius: 100%;
+    width: 150px;
+    margin: 20px;
+}
+
 .rowmenu {
     margin: 10px;
     margin-top: 10px;
@@ -27,27 +44,49 @@
     background: url("../assets/portfolio-background.jpg");
     background-size:100% auto;
     background-repeat:no-repeat;
+    padding: 30px;
 }
 
 .name {
-    margin-top: 50px;
     font-size: xx-large;
-    color: goldenrod;
+    color: black;
+    font-weight: bolder;
 }
 
 .subname {
-    margin-top: 10px;
     font-size: large;
-    color: white;
+    color: black;
 }
 
 .icons {
-    color: white;
+    color: black;
     margin: 10px;
 }
 
 .center-block {
-   margin-left:auto;
-   margin-right:auto;
-   display:block;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.projects-header {
+    margin: 30px;
+}
+
+.project-group {
+    margin: 10px;
+}
+
+.project-icon {
+    padding: 10px;
+}
+
+.project-title {
+    color: black;
+    font-weight: bold;
+}
+
+#project a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: black;
 }
