@@ -44,47 +44,81 @@ function generateSkillElement(skill, color, percentage) {
         replace("%colordark%", LightenDarkenColor(color, -20)).replace("%percentage%", ComputePercentage(percentage));
 }
 
-$("#soft-col-1").append(generateSkillElement("C/C++", "#696969", 100));
-$("#soft-col-1").append(generateSkillElement("C#", "#696969", 50));
-$("#soft-col-1").append(generateSkillElement("Kotlin", "#696969", 30));
-$("#soft-col-1").append(generateSkillElement("HTML/CSS", "#696969", 50));
+function populateSkillColumn(column, map, color) {
+    for (var [key, value] of map) {
+        $(column).append(generateSkillElement(key, color, value));
+    }
+}
 
-$("#soft-col-2").append(generateSkillElement("Java", "#696969", 90));
-$("#soft-col-2").append(generateSkillElement("Assembly", "#696969", 40));
-$("#soft-col-2").append(generateSkillElement("Python", "#696969", 50));
-$("#soft-col-2").append(generateSkillElement("Javascript", "#696969", 70));
+var softwareSkillsMap1 = new Map();
+softwareSkillsMap1.set("C/C++", 90);
+softwareSkillsMap1.set("C#", 50);
+softwareSkillsMap1.set("Kotlin", 30);
+softwareSkillsMap1.set("HTML/CSS", 50);
+populateSkillColumn("#soft-col-1", softwareSkillsMap1, "#696969");
 
-$("#hard-col-1").append(generateSkillElement("Verilog", "#D2B48C", 50));
+var softwareSkillsMap2 = new Map();
+softwareSkillsMap2.set("Java", 90);
+softwareSkillsMap2.set("Assembly", 40);
+softwareSkillsMap2.set("Python", 50);
+softwareSkillsMap2.set("Javascript", 70);
+populateSkillColumn("#soft-col-2", softwareSkillsMap2, "#696969");
 
-$("#hard-col-2").append(generateSkillElement("VHDL", "#D2B48C", 50));
+var hardwareSkillsMap1 = new Map();
+hardwareSkillsMap1.set("Verilog", 50);
+populateSkillColumn("#hard-col-1", hardwareSkillsMap1, "#D2B48C");
 
-$("#ide-col-1").append(generateSkillElement("Android Studio", "#BDB76B", 90));
-$("#ide-col-1").append(generateSkillElement("Eclipse", "#BDB76B", 60));
+var hardwareSkillsMap2 = new Map();
+hardwareSkillsMap2.set("VHDL", 50);
+populateSkillColumn("#hard-col-2", hardwareSkillsMap2, "#D2B48C");
 
-$("#ide-col-2").append(generateSkillElement("Visual Studio", "#BDB76B", 70));
-$("#ide-col-2").append(generateSkillElement("Intellij", "#BDB76B", 60));
+var ideSkillsMap1 = new Map();
+ideSkillsMap1.set("Android Studio", 90);
+ideSkillsMap1.set("Eclipse", 60);
+populateSkillColumn("#ide-col-1", ideSkillsMap1, "#BDB76B");
 
-$("#test-col-1").append(generateSkillElement("Espresso", "#FF6347", 90));
-$("#test-col-1").append(generateSkillElement("JUnit", "#FF6347", 90));
-$("#test-col-1").append(generateSkillElement("Lint", "#FF6347", 80));
+var ideSkillsMap2 = new Map();
+ideSkillsMap2.set("Visual Studio", 70);
+ideSkillsMap2.set("Intellij IDEA", 60);
+populateSkillColumn("#ide-col-2", ideSkillsMap2, "#BDB76B");
 
-$("#test-col-2").append(generateSkillElement("UI Automator", "#FF6347", 80));
-$("#test-col-2").append(generateSkillElement("Sonarqube", "#FF6347", 70));
-$("#test-col-2").append(generateSkillElement("Wireshark", "#FF6347", 70));
+var testSkillsMap1 = new Map();
+testSkillsMap1.set("Espresso", 90);
+testSkillsMap1.set("JUnit", 90);
+testSkillsMap1.set("Lint", 80);
+populateSkillColumn("#test-col-1", testSkillsMap1, "#FF6347");
 
-$("#os-col-1").append(generateSkillElement("Windows", "#9370DB", 90));
-$("#os-col-1").append(generateSkillElement("Linux", "#9370DB", 80));
+var testSkillsMap2 = new Map();
+testSkillsMap2.set("UI Automator", 80);
+testSkillsMap2.set("Sonarqube", 70);
+testSkillsMap2.set("Wireshark", 70);
+populateSkillColumn("#test-col-2", testSkillsMap2, "#FF6347");
 
-$("#os-col-2").append(generateSkillElement("Android", "#9370DB", 90));
-$("#os-col-2").append(generateSkillElement("DryOS", "#9370DB", 70));
+var osSkillsMap1 = new Map();
+osSkillsMap1.set("Windows", 90);
+osSkillsMap1.set("Linux", 80);
+populateSkillColumn("#os-col-1", osSkillsMap1, "#9370DB");
 
-$("#db-col-1").append(generateSkillElement("Firebase", "#778899", 80));
-$("#db-col-1").append(generateSkillElement("MySQL", "#778899", 70));
+var osSkillsMap2 = new Map();
+osSkillsMap2.set("Android", 90);
+osSkillsMap2.set("DryOS", 70);
+populateSkillColumn("#os-col-2", osSkillsMap2, "#9370DB");
 
-$("#db-col-2").append(generateSkillElement("SQLite", "#778899", 90));
-$("#db-col-2").append(generateSkillElement("PostgreSQL", "#778899", 60));
+var dbSkillsMap1 = new Map();
+dbSkillsMap1.set("Firebase", 80);
+dbSkillsMap1.set("MySQL", 70);
+populateSkillColumn("#db-col-1", dbSkillsMap1, "#778899");
 
-$("#vcs-col-1").append(generateSkillElement("SVN", "#DEB887", 90));
-$("#vcs-col-1").append(generateSkillElement("Perforce", "#DEB887", 90));
+var dbSkillsMap2 = new Map();
+dbSkillsMap2.set("SQLite", 80);
+dbSkillsMap2.set("PostgreSQL", 60);
+populateSkillColumn("#db-col-2", dbSkillsMap2, "#778899");
 
-$("#vcs-col-2").append(generateSkillElement("Git", "#DEB887", 90));
+var vcsSkillsMap1 = new Map();
+vcsSkillsMap1.set("SVN", 90);
+vcsSkillsMap1.set("Perforce", 90);
+populateSkillColumn("#vcs-col-1", vcsSkillsMap1, "#DEB887");
+
+var vcsSkillsMap2 = new Map();
+vcsSkillsMap2.set("Git", 90);
+populateSkillColumn("#vcs-col-2", vcsSkillsMap2, "#DEB887");
