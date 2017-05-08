@@ -81,6 +81,12 @@
     padding: 10px;
 }
 
+.project-library-icon {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
 .project-title {
     color: black;
     font-weight: bold;
